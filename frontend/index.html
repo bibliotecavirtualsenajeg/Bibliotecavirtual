@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual Institucional Jorge Eliecer Gaitan</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Contenedor de Notificaciones -->
+    <div id="notification-container" class="d-none"></div>
+
+    <header class="bg-primary text-white text-center p-3 d-flex justify-content-between align-items-center">
+        <h1>Biblioteca Virtual Institucional Jorge Eliecer Gaitan</h1>
+        <button id="logout-button" class="btn btn-danger d-none">Cerrar Sesión</button>
+    </header>
+
+    <main class="container mt-5">
+        <div id="login-view">
+            <h2 class="text-center">Inicio de Sesión</h2>
+            <form id="login-form">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" id="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+            </form>
+        </div>
+
+        <div id="admin-view" class="d-none">
+            <!-- Vistas para admin -->
+        </div>
+
+        <div id="profesor-view" class="d-none">
+            <!-- Vistas para profesor -->
+        </div>
+
+        <div id="estudiante-view" class="d-none">
+            <!-- Vistas para estudiante -->
+        </div>
+    </main>
+
+    <footer class="bg-light text-center p-3 mt-5">
+        <p>&copy; 2025 Biblioteca Virtual Institucional Jorge Eliecer Gaitan</p>
+    </footer>
+
+    <!-- Modal de Edición de Libros -->
+    <div class="modal fade" id="editBookModal" tabindex="-1" aria-labelledby="editBookModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editBookModalLabel">Editar Libro</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="edit-book-form" enctype="multipart/form-data"> <!-- Added enctype -->
+              <input type="hidden" id="edit-book-id" name="id">
+              <div class="mb-3">
+                <label for="edit-book-title" class="form-label">Título</label>
+                <input type="text" class="form-control" id="edit-book-title" name="titulo" required> <!-- Added name -->
+              </div>
+              <div class="mb-3">
+                <label for="edit-book-area" class="form-label">Área</label>
+                <input type="text" class="form-control" id="edit-book-area" name="area" required> <!-- Added name -->
+              </div>
+              <div class="mb-3"> <!-- New image input field -->
+                <label for="edit-book-image" class="form-label">Imagen (opcional)</label>
+                <input type="file" class="form-control" id="edit-book-image" name="image" accept="image/*">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+/* Estilos personalizados */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* Estilos para el contenedor de notificaciones */
+#notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050; /* Asegura que esté sobre otros elementos de Bootstrap */
+    min-width: 250px;
+}
+
+.notification {
+    padding: 1rem;
+    border-radius: .25rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .1);
+}
+
+.notification.is-danger {
+    background-color: #dc3545; /* Rojo de Bootstrap para peligro */
+}
+
+.notification.is-success {
+    background-color: #198754; /* Verde de Bootstrap para éxito */
+}
+
+/* Estilo para mensajes de carga */
+.loading-message {
+    text-align: center;
+    padding: 2rem;
+    font-style: italic;
+    color: #6c757d; /* Color de texto silenciado de Bootstrap */
+}
